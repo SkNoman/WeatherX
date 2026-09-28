@@ -17,6 +17,10 @@ dependencies {
 
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
+
+    //splash
+    implementation(libs.androidx.core.splashscreen)
+
 }
 
 android {
