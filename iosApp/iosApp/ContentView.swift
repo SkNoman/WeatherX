@@ -1,18 +1,41 @@
-import UIKit
+//
+//  ContentView.swift
+//  iosApp
+//
+//  Created by Abdullah Al Noman on 29/9/26.
+//
+
+import Foundation
+
+
 import SwiftUI
-import Shared
-
-struct ComposeView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Self.Context) -> UIViewController {
-        MainViewControllerKt.MainViewController()
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewController, context: Self.Context) {}
-}
 
 struct ContentView: View {
     var body: some View {
-        ComposeView()
-            .ignoresSafeArea()
+        TabView {
+
+            HomeTab()
+                .tabItem {
+                    Image("cloudyTab")
+                    Text("Weather")
+                }
+
+            SearchView()
+                .tabItem {
+                    Image("radarTab")
+                    Text("Radar")
+                }
+
+            SettingsView()
+                .tabItem {
+                    Image("cityscapeTab")
+                    Text("Cities")
+                }
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gearshape")
+                    Text("Settings")
+                }
+        }
     }
 }
